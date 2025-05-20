@@ -19,7 +19,7 @@ STATICFILES_DIRS = [
 ]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =False
-ALLOWED_HOSTS = ['*.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['https://store-city.vercel.app/', 'localhost', '127.0.0.1']
 
 
 STRIPE_SECRET_KEY = "sk_test_51RQJTjHBEtBDlMYRmWQgZrZosFVPabQHexlLxnH1n1NbWo0rfGWBmpAYpfaF0QtYb1looFhT1ZATSM8eRHonLpEE00t67EcxAt"
