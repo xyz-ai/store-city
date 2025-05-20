@@ -78,9 +78,13 @@ WSGI_APPLICATION = "back_Store_django.wsgi.application"
 
 # Database
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('PGDATABASE', 'store_db_qoyh'),
+        'USER': os.getenv('PGUSER', 'store_db_qoyh_user'),
+        'PASSWORD': os.getenv('PGPASSWORD', 'NDmRRjazpPDVhQXjnncFHDWIsI2NhGeL'),
+        'HOST': os.getenv('PGHOST', 'dpg-d0m7a9ggjchc739k7i40-a.oregon-postgres.render.com'),
+        'PORT': os.getenv('PGPORT', '5432'),
     }
 }
 
