@@ -56,7 +56,6 @@ CSRF_TRUSTED_ORIGINS = [
     'https://store-city.vercel.app',
     'https://store-city-2rlv71qbv-lzls-projects-3cfbf0a2.vercel.app',
 ]
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 CORS_ALLOW_METHODS = ['GET', 'POST', 'OPTIONS']
 
 ROOT_URLCONF = "back_Store_django.urls"
