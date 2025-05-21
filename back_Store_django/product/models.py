@@ -40,17 +40,17 @@ class Product(models.Model):
     
     def get_image(self):
         if self.image:
-            return f"{BASE_URL}{self.image.url}"
+            return 'https://store-city.onrender.com'+self.image.url
         return ''
     
     def get_thumbnail(self):
         if self.thumbnail:
-            return f"{BASE_URL}{self.image.url}"
+            return 'https://store-city.onrender.com'+self.image.url
         else:
             if self.image:
                 self.thumbnail = self.make_thumbnail(self.image)
                 self.save()
-                return f"{BASE_URL}{self.image.url}"
+                return 'https://store-city.onrender.com'+self.image.url
             else:
                 return ''
             
