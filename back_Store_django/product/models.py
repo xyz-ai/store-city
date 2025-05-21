@@ -1,9 +1,10 @@
 from io import BytesIO
 from PIL import Image
-
+import os
 from django.core.files import File
 from django.db import models
 
+BASE_URL = os.getenv("API_BASE_URL")
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=255)
@@ -39,17 +40,17 @@ class Product(models.Model):
     
     def get_image(self):
         if self.image:
-            return ${import.meta.env.VITE_API_BASE_URL} + self.image.url
+            return f"{BASE_URL}{self.image.url}"
         return ''
     
     def get_thumbnail(self):
         if self.thumbnail:
-            return ${import.meta.env.VITE_API_BASE_URL} + self.thumbnail.url
+            return f"{BASE_URL}{self.image.url}"
         else:
             if self.image:
                 self.thumbnail = self.make_thumbnail(self.image)
                 self.save()
-                return ${import.meta.env.VITE_API_BASE_URL} + self.thumbnail.url
+                return f"{BASE_URL}{self.image.url}"
             else:
                 return ''
             
