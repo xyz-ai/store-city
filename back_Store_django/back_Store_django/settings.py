@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =False
-ALLOWED_HOSTS = ['*.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*.onrender.com', 'localhost', '127.0.0.1', 'store-city.onrender.com']
 
 
 STRIPE_SECRET_KEY = "sk_test_51RQJTjHBEtBDlMYRmWQgZrZosFVPabQHexlLxnH1n1NbWo0rfGWBmpAYpfaF0QtYb1looFhT1ZATSM8eRHonLpEE00t67EcxAt"
@@ -48,11 +48,13 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:8080",
     'https://store-city.vercel.app',
+    'https://store-city-2rlv71qbv-lzls-projects-3cfbf0a2.vercel.app',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://store-city.onrender.com',
     'https://store-city.vercel.app',
+    'https://store-city-2rlv71qbv-lzls-projects-3cfbf0a2.vercel.app',
 ]
 
 CORS_ALLOW_METHODS = ['GET', 'POST', 'OPTIONS']
