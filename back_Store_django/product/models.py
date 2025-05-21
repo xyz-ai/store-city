@@ -39,17 +39,17 @@ class Product(models.Model):
     
     def get_image(self):
         if self.image:
-            return import.meta.env.VITE_API_BASE_URL + self.image.url
+            return ${import.meta.env.VITE_API_BASE_URL} + self.image.url
         return ''
     
     def get_thumbnail(self):
         if self.thumbnail:
-            return import.meta.env.VITE_API_BASE_URL + self.thumbnail.url
+            return ${import.meta.env.VITE_API_BASE_URL} + self.thumbnail.url
         else:
             if self.image:
                 self.thumbnail = self.make_thumbnail(self.image)
                 self.save()
-                return import.meta.env.VITE_API_BASE_URL + self.thumbnail.url
+                return ${import.meta.env.VITE_API_BASE_URL} + self.thumbnail.url
             else:
                 return ''
             
