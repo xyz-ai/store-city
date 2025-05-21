@@ -12,8 +12,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =True
-ALLOWED_HOSTS = ['*.onrender.com', 'localhost', '127.0.0.1', 'store-city.onrender.com']
+DEBUG =False
+ALLOWED_HOSTS = ['*.onrender.com', 'localhost', '127.0.0.1', 'store-city.onrender.com', 'store-city.vercel.app']
 
 
 STRIPE_SECRET_KEY = "sk_test_51RQJTjHBEtBDlMYRmWQgZrZosFVPabQHexlLxnH1n1NbWo0rfGWBmpAYpfaF0QtYb1looFhT1ZATSM8eRHonLpEE00t67EcxAt"
@@ -56,7 +56,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://store-city.vercel.app',
     'https://store-city-2rlv71qbv-lzls-projects-3cfbf0a2.vercel.app',
 ]
-
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 CORS_ALLOW_METHODS = ['GET', 'POST', 'OPTIONS']
 
 ROOT_URLCONF = "back_Store_django.urls"
