@@ -11,6 +11,12 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = "django-insecure-ig#u2dknonp5#l20k#@t!dp2g!n!bjyqi4tf3q#-i_)bw&5%@-"
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =False
 ALLOWED_HOSTS = ['*.onrender.com', 'localhost', '127.0.0.1']
@@ -47,14 +53,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:8080",
-    'https://store-city.vercel.app',
 ]
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://store-city.onrender.com',
-    'https://store-city.vercel.app',
-]
-
 CORS_ALLOW_METHODS = ['GET', 'POST', 'OPTIONS']
 
 ROOT_URLCONF = "back_Store_django.urls"
